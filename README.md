@@ -1210,3 +1210,389 @@ p2.sayHello(); // Hello, I'm Shanto
   <li><b>Prototype Chain</b> → Objects inherit properties/methods through prototypes.</li>
 </ul>
 
+
+
+<\hr>
+
+<h1>JavaScript Basics: Primitive & Non-Primitive Data Types</h1>
+
+<h2>1. Primitive Data Types</h2>
+<ul>
+  <li><b>number</b> → Example: <code>let x = 10;</code></li>
+  <li><b>string</b> → Example: <code>let name = "Shanta";</code></li>
+  <li><b>boolean</b> → Example: <code>let isActive = true;</code></li>
+  <li><b>null</b> → Example: <code>let a = null;</code></li>
+  <li><b>undefined</b> → Example: <code>let b;</code></li>
+  <li><b>symbol</b> → Example: <code>let id = Symbol("id");</code></li>
+  <li><b>bigint</b> → Example: <code>let big = 12345678901234567890n;</code></li>
+</ul>
+<p><b>Key Point:</b> Stored by <em>value</em> and are <em>immutable</em>.</p>
+
+<h2>2. Non-Primitive (Reference) Data Types</h2>
+<ul>
+  <li><b>object</b> → Example: <code>let user = {name: "Shanta", age: 22};</code></li>
+  <li><b>array</b> → Example: <code>let nums = [1, 2, 3];</code></li>
+  <li><b>function</b> → Example: <code>function greet(){ return "Hi"; }</code></li>
+  <li><b>Date</b>, <b>RegExp</b>, etc.</li>
+</ul>
+<p><b>Key Point:</b> Stored by <em>reference</em> and are <em>mutable</em>.</p>
+
+<details>
+  <summary>Quick Comparison</summary>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Primitive</th>
+        <th>Non-Primitive</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Storage</td>
+        <td>By Value</td>
+        <td>By Reference</td>
+      </tr>
+      <tr>
+        <td>Mutability</td>
+        <td>Immutable</td>
+        <td>Mutable</td>
+      </tr>
+      <tr>
+        <td>Examples</td>
+        <td><code>number</code>, <code>string</code>, <code>boolean</code></td>
+        <td><code>object</code>, <code>array</code>, <code>function</code></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+<hr/>
+
+
+
+
+
+
+
+<h1>JavaScript: null vs undefined</h1>
+
+<p><b>undefined:</b><br>
+A variable that has been declared but not assigned a value is <code>undefined</code>. It is also the default return value of functions that don’t return anything.</p>
+
+<pre><code>// Example 1: Declared but not assigned
+let a;
+console.log(a); // undefined
+
+// Example 2: Function with no return
+function greet() {}
+console.log(greet()); // undefined
+</code></pre>
+
+<p><b>null:</b><br>
+<code>null</code> is an assignment value. It represents the intentional absence of any object value.</p>
+
+<pre><code>// Example 1: Explicit assignment
+let b = null;
+console.log(b); // null
+
+// Example 2: Object placeholder
+let user = {name: "Shanta", age: null};
+console.log(user.age); // null
+</code></pre>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li><b>undefined</b> → Variable declared but not assigned, or function returns nothing.</li>
+  <li><b>null</b> → Explicitly assigned "empty" value.</li>
+  <li><b>Type of undefined</b> → <code>"undefined"</code></li>
+  <li><b>Type of null</b> → <code>"object"</code> (JavaScript quirk)</li>
+</ul>
+
+<\hr>
+
+
+<h1>JavaScript: Truthy vs Falsy</h1>
+
+<p><b>Truthy:</b><br>
+Values that are considered <code>true</code> when evaluated in a Boolean context.</p>
+
+<pre><code>// Examples of Truthy values
+if ("hello") { console.log("Truthy!"); }   // "hello" is truthy
+if (42) { console.log("Truthy!"); }        // 42 is truthy
+if ([]) { console.log("Truthy!"); }        // empty array is truthy
+if ({}) { console.log("Truthy!"); }        // empty object is truthy
+</code></pre>
+
+<p><b>Falsy:</b><br>
+Values that are considered <code>false</code> when evaluated in a Boolean context.</p>
+
+<pre><code>// Examples of Falsy values
+if (0) { console.log("Falsy!"); }          // 0 is falsy
+if ("") { console.log("Falsy!"); }         // empty string is falsy
+if (null) { console.log("Falsy!"); }       // null is falsy
+if (undefined) { console.log("Falsy!"); }  // undefined is falsy
+if (NaN) { console.log("Falsy!"); }        // NaN is falsy
+</code></pre>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li><b>Truthy</b> → Evaluates to <code>true</code> in Boolean context (non-zero numbers, non-empty strings, objects, arrays).</li>
+  <li><b>Falsy</b> → Evaluates to <code>false</code> in Boolean context (0, "", null, undefined, NaN, false).</li>
+</ul>
+
+<\hr>
+
+
+
+
+
+<h1>JavaScript: == vs ===</h1>
+
+<p><b>== (Equality Operator)</b><br>
+Checks if two values are equal <em>after type coercion</em>. JavaScript converts the values to the same type before comparing.</p>
+
+<pre><code>
+console.log(5 == "5");  // true, string "5" converted to number 5
+console.log(null == undefined); // true
+console.log(0 == false); // true
+</code></pre>
+
+<p><b>=== (Strict Equality Operator)</b><br>
+Checks if two values are equal <em>without type coercion</em>. Both value and type must be the same.</p>
+
+<pre><code>
+console.log(5 === "5");  // false, different types
+console.log(null === undefined); // false
+console.log(0 === false); // false
+console.log(5 === 5);     // true
+</code></pre>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li><b>==</b> → Compares values <em>after type conversion</em> (less strict).</li>
+  <li><b>===</b> → Compares values <em>without type conversion</em> (strict equality).</li>
+</ul>
+
+
+
+<\hr>
+
+
+<h1>JavaScript: Scope</h1>
+
+<p><b>Scope:</b><br>
+Scope determines the accessibility of variables in different parts of your code.</p>
+
+<h2>1. Global Scope</h2>
+<p>Variables declared outside any function or block are in the global scope and accessible anywhere.</p>
+<pre><code>
+let globalVar = "I am global";
+
+function test() {
+  console.log(globalVar); // Accessible here
+}
+
+console.log(globalVar); // Accessible here too
+</code></pre>
+
+<h2>2. Local / Function Scope</h2>
+<p>Variables declared inside a function are only accessible inside that function.</p>
+<pre><code>
+function myFunc() {
+  let localVar = "I am local";
+  console.log(localVar); // Accessible here
+}
+
+console.log(localVar); // Error! Not accessible outside
+</code></pre>
+
+<h2>3. Block Scope</h2>
+<p>Variables declared with <code>let</code> or <code>const</code> inside a block <code>{ }</code> are only accessible within that block.</p>
+<pre><code>
+{
+  let blockVar = "I am block scoped";
+  const anotherVar = 10;
+  console.log(blockVar); // Accessible here
+}
+
+console.log(blockVar); // Error! Not accessible outside
+</code></pre>
+
+<h2>4. var vs let/const</h2>
+<ul>
+  <li><b>var</b> → Function scoped, not block scoped</li>
+  <li><b>let / const</b> → Block scoped</li>
+</ul>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li><b>Global Scope</b> → Accessible everywhere</li>
+  <li><b>Local / Function Scope</b> → Accessible only inside the function</li>
+  <li><b>Block Scope</b> → Accessible only inside the block (<code>let</code> / <code>const</code>)</li>
+  <li><b>var</b> → Function scoped, can cause unexpected issues in blocks</li>
+</ul>
+
+
+<\hr>
+
+
+<h1>JavaScript: Callback Functions</h1>
+
+<p><b>Callback:</b><br>
+A callback is a function passed as an argument to another function, which is then executed inside that function.</p>
+
+<h2>1. Basic Example</h2>
+<pre><code>
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Shanta", sayGoodbye);
+
+// Output:
+// Hello Shanta
+// Goodbye!
+</code></pre>
+
+<h2>2. Callback with Array</h2>
+<pre><code>
+let numbers = [1, 2, 3];
+
+numbers.forEach(function(num) {
+  console.log(num * 2);
+});
+
+// Output:
+// 2
+// 4
+// 6
+</code></pre>
+
+<h2>3. Key Points</h2>
+<ul>
+  <li>Callbacks are used for asynchronous operations like <code>setTimeout</code>, API requests, event handling.</li>
+  <li>They allow functions to be executed after a certain task is completed.</li>
+</ul>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li>A <b>callback</b> is a function passed as an argument to another function.</li>
+  <li>Executed after the outer function finishes its task.</li>
+  <li>Used for asynchronous tasks and event handling.</li>
+</ul>
+
+
+<\hr>
+
+
+
+<h1>JavaScript: Pass by Value vs Pass by Reference</h1>
+
+<p><b>Pass by Value:</b><br>
+When a primitive value is passed to a function, a **copy** of the value is passed. Changes inside the function do **not** affect the original variable.</p>
+
+<pre><code>
+function changeValue(x) {
+  x = 100;
+  console.log("Inside function:", x);
+}
+
+let num = 50;
+changeValue(num); 
+console.log("Outside function:", num);
+
+// Output:
+// Inside function: 100
+// Outside function: 50
+</code></pre>
+
+<p><b>Pass by Reference:</b><br>
+When a non-primitive value (object or array) is passed to a function, a **reference** is passed. Changes inside the function **affect the original object/array**.</p>
+
+<pre><code>
+function changeArray(arr) {
+  arr.push(4);
+  console.log("Inside function:", arr);
+}
+
+let numbers = [1, 2, 3];
+changeArray(numbers);
+console.log("Outside function:", numbers);
+
+// Output:
+// Inside function: [1, 2, 3, 4]
+// Outside function: [1, 2, 3, 4]
+</code></pre>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li><b>Pass by Value</b> → Primitive types, copy of value is passed, original value unchanged.</li>
+  <li><b>Pass by Reference</b> → Non-primitive types, reference is passed, original value can change.</li>
+</ul>
+
+
+<\hr>
+
+
+<h1>JavaScript: Closures</h1>
+
+<p><b>Closure:</b><br>
+A closure is a function that **remembers the variables from its outer scope** even after the outer function has finished executing.</p>
+
+<h2>1. Basic Example</h2>
+<pre><code>
+function outer() {
+  let count = 0;
+  
+  function inner() {
+    count++;
+    console.log(count);
+  }
+  
+  return inner;
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+counter(); // 3
+</code></pre>
+
+<h2>2. Key Points</h2>
+<ul>
+  <li>Closures allow functions to **access variables from outer scopes** even after the outer function has returned.</li>
+  <li>Useful for **data privacy** and **creating private variables**.</li>
+  <li>Commonly used in callbacks, event handlers, and functional programming.</li>
+</ul>
+
+<hr/>
+
+<p><b>Quick Summary:</b></p>
+<ul>
+  <li>A <b>closure</b> is a function that retains access to its <em>outer function’s variables</em> even after the outer function has finished.</li>
+  <li>Allows <em>private state</em> and helps avoid global variables.</li>
+</ul>
+
+
+<\hr>
+
+
+
