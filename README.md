@@ -1212,7 +1212,7 @@ p2.sayHello(); // Hello, I'm Shanto
 
 
 
-<\hr>
+<hr/>
 
 <h1>JavaScript Basics: Primitive & Non-Primitive Data Types</h1>
 
@@ -1273,8 +1273,6 @@ p2.sayHello(); // Hello, I'm Shanto
 
 
 
-
-
 <h1>JavaScript: null vs undefined</h1>
 
 <p><b>undefined:</b><br>
@@ -1311,7 +1309,7 @@ console.log(user.age); // null
   <li><b>Type of null</b> → <code>"object"</code> (JavaScript quirk)</li>
 </ul>
 
-<\hr>
+<hr/>
 
 
 <h1>JavaScript: Truthy vs Falsy</h1>
@@ -1345,9 +1343,7 @@ if (NaN) { console.log("Falsy!"); }        // NaN is falsy
   <li><b>Falsy</b> → Evaluates to <code>false</code> in Boolean context (0, "", null, undefined, NaN, false).</li>
 </ul>
 
-<\hr>
-
-
+<hr/>
 
 
 
@@ -1382,9 +1378,7 @@ console.log(5 === 5);     // true
 
 
 
-<\hr>
-
-
+<hr/>
 <h1>JavaScript: Scope</h1>
 
 <p><b>Scope:</b><br>
@@ -1442,7 +1436,7 @@ console.log(blockVar); // Error! Not accessible outside
 </ul>
 
 
-<\hr>
+<hr/>
 
 
 <h1>JavaScript: Callback Functions</h1>
@@ -1498,10 +1492,7 @@ numbers.forEach(function(num) {
 </ul>
 
 
-<\hr>
-
-
-
+<hr/>
 <h1>JavaScript: Pass by Value vs Pass by Reference</h1>
 
 <p><b>Pass by Value:</b><br>
@@ -1547,9 +1538,7 @@ console.log("Outside function:", numbers);
   <li><b>Pass by Value</b> → Primitive types, copy of value is passed, original value unchanged.</li>
   <li><b>Pass by Reference</b> → Non-primitive types, reference is passed, original value can change.</li>
 </ul>
-
-
-<\hr>
+<hr/>
 
 
 <h1>JavaScript: Closures</h1>
@@ -1590,9 +1579,7 @@ counter(); // 3
   <li>A <b>closure</b> is a function that retains access to its <em>outer function’s variables</em> even after the outer function has finished.</li>
   <li>Allows <em>private state</em> and helps avoid global variables.</li>
 </ul>
-
-
-<\hr>
+<hr/>
 
 
 
