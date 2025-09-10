@@ -1677,6 +1677,46 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
 
 <hr/>
 
+
+<section>
+  <h2>✨ Promises in JavaScript</h2>
+  <p>
+    A <strong>Promise</strong> represents the eventual result of an asynchronous operation.  
+    It helps us write async code in a cleaner and more manageable way.
+  </p>
+
+  <h3>🔹 Key Points</h3>
+  <ul>
+    <li><strong>States:</strong> Pending, Fulfilled, Rejected</li>
+    <li><strong>Chaining:</strong> <code>.then()</code> and <code>.catch()</code></li>
+    <li><strong>Parallel:</strong> <code>Promise.all()</code> for multiple promises</li>
+    <li><strong>Async/Await:</strong> Cleaner and synchronous-looking async code</li>
+  </ul>
+
+  <h3>✅ Example</h3>
+  <pre>
+    <code>
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+  if (success) {
+    resolve("Operation completed successfully");
+  } else {
+    reject("Operation failed");
+  }
+});
+
+myPromise
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+    </code>
+  </pre>
+
+  <p>⚡ Use Promises to simplify async workflows and improve code readability!</p>
+</section>
+
+
+<hr/>
+
 <h2>⚡ JavaScript Async/Await</h2>
 
 <p>
@@ -1802,6 +1842,9 @@ fetch('https://api.example.com/login', {
 </p>
 
 <hr/>
+
+
+
 
 
 
