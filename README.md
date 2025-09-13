@@ -99,6 +99,8 @@ BOM allows interaction with the browser outside the document (window, navigator,
   <li><b>location.href</b> → Current URL</li>
   <li><b>location.assign()</b> → Navigate to new URL</li>
   <li><b>location.reload()</b> → Reload page</li>
+  <li><b>window.location.href = "https://www.google.com";</b> → Redirect to another page</li>
+
 </ul>
 
 <h2>4. history object</h2>
